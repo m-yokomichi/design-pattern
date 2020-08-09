@@ -5,7 +5,7 @@ type Student struct {
 	sex int
 }
 
-func (s *Student) Student(name string, sex int) {
+func (s *Student) SetStudent(name string, sex int) {
 	s.name = name
 	s.sex = sex
 }
