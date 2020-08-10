@@ -8,6 +8,6 @@ func (studentList *StudentList) StudentList() {
 	studentList.students = append(studentList.students, &Student{})
 } 
 
-func (studentList *StudentList) Add(student *Student) {
-	studentList.students = append(studentList.students, student)
+func (studentList *StudentList) Add(student Student) {
+	studentList.students = append(studentList.students, &student)
 }
