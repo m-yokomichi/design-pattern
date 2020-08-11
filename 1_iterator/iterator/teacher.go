@@ -20,7 +20,14 @@ func (t *Teacher) CreateStudentList(s Student) {
 
 // 名簿順に生徒の名前を全て呼ぶ
 func (t *Teacher) CallStudents() {
+	/* iteratorなし
 	for _, student := range t.studentList.students {
+		fmt.Println(student.GetName())
+	}
+	*/
+
+	for t.studentList.HasNext() {
+		student := t.studentList.Next() 
 		fmt.Println(student.GetName())
 	}
 }
