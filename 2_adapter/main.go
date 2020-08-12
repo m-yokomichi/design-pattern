@@ -1,5 +1,16 @@
 package main
 
+import (
+	adapter "2_adapter/adapter"
+)
+
 func main() {
-	// TODO Adapterパターン実装していく
+	var newHello adapter.HelloInterface
+	newHello = &adapter.NewHello{}
+	newHello.SetString("World")
+
+	// Interfaceに書かれていない機能は使えない　（Adapterパターンできない？）
+	//newHello.CallHello()
+
+	newHello.CallToHelloString()
 }
