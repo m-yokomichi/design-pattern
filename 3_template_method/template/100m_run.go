@@ -13,6 +13,7 @@ func NewRun100() *Run100 {
 	run100 := &Run100{
 		Template: &Template{},
 	}
+	run100.tmp = run100
 	return run100
 }
 
@@ -30,5 +31,5 @@ func (r *Run100) Run() {
 
 func (r *Run100) GoalCall() {
 	fmt.Println("ゴール！")
-	time.Sleep(10 * time.Second)
+	time.Sleep(time.Second)
 }

@@ -1,17 +1,17 @@
 package template
 
 type TemplateInterface interface {
-	StartColl()
+	StartCall()
 	Run()
 	GoalCall()
 }
 
 type Template struct {
-	template TemplateInterface
+	tmp TemplateInterface
 }
 
 func (t *Template) Go() {
-	t.template.StartColl()
-	t.template.Run()
-	t.template.GoalCall()
+	t.tmp.StartCall()
+	t.tmp.Run()
+	t.tmp.GoalCall()
 }
