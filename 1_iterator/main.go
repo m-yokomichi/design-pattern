@@ -8,7 +8,7 @@ import (
 func main() {
 	var teacher iterator.Teacher
 	teacher.Init()
-	
+
 	var student iterator.Student
 
 	student.SetStudent("Jelly", 2)
