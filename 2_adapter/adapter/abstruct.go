@@ -9,5 +9,5 @@ type Hello string
 
 // CallHello こんにちわする
 func (hello *Hello) CallHello() {
-	fmt.Println("Hello ", hello)
+	fmt.Println("Hello ", *hello)
 }
