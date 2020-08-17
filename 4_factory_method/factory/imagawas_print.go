@@ -15,24 +15,24 @@ func NewImagawasPrint() *ImagawasPrint {
 }
 
 func (_ *ImagawasPrint) Draw(hanzai Cuttable) {
-	fmt.Println(hanzai.GetMaterialName(), "に絵を描く")
+	fmt.Println(hanzai.GetProductName(), "に絵を描く")
 }
 
 func (_ *ImagawasPrint) Cat(hanzai Cuttable) {
-	fmt.Println(hanzai.GetMaterialName(), "を切る")
+	fmt.Println(hanzai.GetProductName(), "を切る")
 }
 func (_ *ImagawasPrint) Prints(hanzai Cuttable) {
 	fmt.Println("プリントする")
 }
 
-func (_ *ImagawasPrint) CreateCuttable() *Cuttable {
+func (_ *ImagawasPrint) CreateCuttable(productName string) Cuttable {
 	var hanzai Cuttable
-	hanzai = NewPotato()
-	return &hanzai
+	hanzai = CreateProduct(productName)
+	return hanzai
 }
 
 func (i *ImagawasPrint) CreateCutPrint(hanzai Cuttable) {
-	i.Draw(hanzai)
-	i.Cat(hanzai)
-	i.Prints(hanzai)
+	i.print.Draw(hanzai)
+	i.print.Cat(hanzai)
+	i.print.Prints(hanzai)
 }

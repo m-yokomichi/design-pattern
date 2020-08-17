@@ -1,5 +1,5 @@
 package factory
 
 type Cuttable interface {
-	GetMaterialName() string
+	GetProductName() string
 }
