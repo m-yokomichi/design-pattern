@@ -1,11 +1,17 @@
 package factory
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type ImagawasPrint struct {
 	*Print
+}
+
+func NewImagawasPrint() *ImagawasPrint {
+	imagawasPrint := &ImagawasPrint{
+		Print: &Print{},
+	}
+	imagawasPrint.print = imagawasPrint
+	return imagawasPrint
 }
 
 func (_ *ImagawasPrint) Draw(hanzai Cuttable) {
@@ -16,12 +22,13 @@ func (_ *ImagawasPrint) Cat(hanzai Cuttable) {
 	fmt.Println(hanzai.GetMaterialName(), "を切る")
 }
 func (_ *ImagawasPrint) Prints(hanzai Cuttable) {
-	fmt.Println("プリントする")}
+	fmt.Println("プリントする")
+}
 
-func (_ *ImagawasPrint) CreateCuttable() Cuttable {
-	potato := &Potato {}
-	potato.Init()
-	return potato
+func (_ *ImagawasPrint) CreateCuttable() *Cuttable {
+	var hanzai Cuttable
+	hanzai = NewPotato()
+	return &hanzai
 }
 
 func (i *ImagawasPrint) CreateCutPrint(hanzai Cuttable) {

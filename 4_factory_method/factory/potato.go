@@ -7,9 +7,9 @@ type Potato struct {
 func (p *Potato) GetMaterialName() string {
 	return p.materialName
 }
+func NewPotato() *Potato {
+	potato := Potato{}
+	potato.materialName = "芋"
 
-func (p *Potato) Init() {
-	p.materialName = "芋"
-
-	return 
+	return &potato
 }
