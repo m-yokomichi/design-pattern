@@ -4,8 +4,8 @@ type Cabbage struct {
 	name string
 }
 
-func CreateCabbage() Vegitable {
-	var cabbage Vegitable
+func CreateCabbage() Vegetable {
+	var cabbage Vegetable
 	cabbage = Cabbage{"キャベツ"}
 	return cabbage
 }
