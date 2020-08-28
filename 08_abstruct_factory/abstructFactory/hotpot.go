@@ -1,7 +1,7 @@
 package abstructFactory
 
 type HotPot struct {
-	soup Soup
+	soup       Soup
 	vegetables Vegetables
 }
 

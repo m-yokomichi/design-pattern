@@ -4,8 +4,8 @@ type ChickenBonesSoup struct {
 	name string
 }
 
-func CreateChickenBonesSoup() Soup {
+func CreateChickenBonesSoup() *Soup {
 	var soup Soup
 	soup = ChickenBonesSoup{"チキン"}
-	return soup
+	return &soup
 }
