@@ -1,4 +1,3 @@
 package abstructFactory
 
-type Soup interface {
-}
+type Soup interface{}
