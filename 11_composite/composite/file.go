@@ -13,8 +13,8 @@ func (f *File) Remove() {
 	fmt.Println(f.name, "が削除されました")
 }
 
-func CreateFile(name string) DirectryEntry {
-	var file DirectryEntry
+func CreateFile(name string) DirectoryEntry {
+	var file DirectoryEntry
 	file = &File{name: name}
 	return file
 }

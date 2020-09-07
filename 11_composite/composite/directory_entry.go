@@ -1,5 +1,5 @@
 package composite
 
-type DirectryEntry interface {
+type DirectoryEntry interface {
 	Remove()
 }
