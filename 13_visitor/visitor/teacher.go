@@ -1,19 +1,29 @@
 package visitor
 
+import "fmt"
+
 type Teacher interface {
-	Visit(int)
-	Visit(string)
+	Visit(interface{})
 }
 
 type RookieTeacher struct {
 	name string
 }
 
-func (t *RookieTeacher) Visit(i int) {
-
+func (t *RookieTeacher) Visit(e interface{}) {
+	switch e.(type) {
+	case *SuzukiHome:
+		t.suzukiVisit()
+	case *SatoHome:
+		t.satoVisit()
+	}
+	fmt.Printf("%T", e)
 }
 
-// 同じメソッドはエラー(method redeclared)
-func (t *RookieTeacher) Visit(i string) {
+func (_ *RookieTeacher) suzukiVisit() {
+	fmt.Println("鈴木さんこんにちは")
+}
 
+func (_ *RookieTeacher) satoVisit() {
+	fmt.Println("佐藤さんこんにちは")
 }
