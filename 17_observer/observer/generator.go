@@ -12,3 +12,7 @@ func (g *Generator) NotifyObservers() {
 		observer.Update(g)
 	}
 }
+
+func (g *Generator) GetNumber() int {
+	return 0
+}
