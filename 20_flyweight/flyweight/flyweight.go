@@ -1,14 +1,9 @@
 package flyweight
 
 type FlyWeight struct {
-	id    int
-	count int
+	id int
 }
 
-func (f *FlyWeight) AddCount() {
-	f.count++
-}
-
-func (f *FlyWeight) GetId() {
+func (f *FlyWeight) GetId() int {
 	return f.id
 }
