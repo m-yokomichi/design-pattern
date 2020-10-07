@@ -1,19 +1,32 @@
 package flyweight
 
 type FlyWeightFactory struct {
-	pool []FlyWeight
+	pool map[int]FlyWeight
 }
 
-type singleton FlyWeightFactory
+type FlyWeightFactoryInterface interface {
+	GetFlyWeight(int) FlyWeight
+}
 
-func GetInstance() {
+var singleton FlyWeightFactoryInterface
+
+func GetInstance() FlyWeightFactoryInterface {
 	if singleton != nil {
-		return &singleton
+		return singleton
 	}
-	singleton = FlyWeightFactory{}
-	return &singleton
+
+	singleton = &FlyWeightFactory{
+		pool: map[int]FlyWeight{},
+	}
+	return singleton
 }
 
-func GetFlyWeight() {
+func (f *FlyWeightFactory) GetFlyWeight(id int) FlyWeight {
+	_, ok := f.pool[id]
+	if ok == true {
+		return f.pool[id]
+	}
 
+	f.pool[id] = FlyWeight{id: id}
+	return f.pool[id]
 }
