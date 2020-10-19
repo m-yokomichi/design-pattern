@@ -1,10 +1,10 @@
 package interpreter
 
 type Expression struct {
-	operator *Operator
+	operator Operator
 }
 
-func NewExpression(operator *Operator) {
+func NewExpression(operator Operator) {
 	var operand Operand
 	operand = &Expression{
 		operator: operator,
@@ -14,5 +14,5 @@ func NewExpression(operator *Operator) {
 }
 
 func (e *Expression) GetOperandString() string {
-	return e.operator.execute().GetOperandString()
+	return e.operator.Execute().GetOperandString()
 }
