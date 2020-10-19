@@ -1,11 +1,11 @@
 package interpreter
 
 type Plus struct {
-	operand1 *Operand
-	operand2 *Operand
+	operand1 Operand
+	operand2 Operand
 }
 
-func NewPlus(operand1, operand2 *Operand) *Plus {
+func NewPlus(operand1, operand2 Operand) *Plus {
 	return &Plus{
 		operand1: operand1,
 		operand2: operand2,
