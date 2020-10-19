@@ -4,7 +4,7 @@ type Expression struct {
 	operator Operator
 }
 
-func NewExpression(operator Operator) {
+func NewExpression(operator Operator) Operand {
 	var operand Operand
 	operand = &Expression{
 		operator: operator,
